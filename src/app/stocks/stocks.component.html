@@ -1,7 +1,26 @@
-<p>
-  stocks works!
-  {{stocks['ise']['data'][2]['company']}}
-</p>
-<!-- <ul *ngFor="let stock of stocks">
-  <li>{{stock}}</li>
-</ul> -->
+
+<table cellpadding="2" cellspacing="7" style="width:100%">
+  <th>Company</th>
+  <th>Symbol</th>
+  <th>Exchange</th>
+  <th>Purchase Price</th>
+  <th>Current Price</th>
+  <th>Purchase Date</th>
+  <th>Sell Date</th>
+  <th>Quantity</th>
+  <th>Total Value</th>
+  <tr *ngFor="let stock of stocks">
+    <td>{{stock.company}}</td>
+    <td>{{stock.symbol}}</td>
+    <td>{{stock.exchange}}</td>
+    <td>{{stock.purchasePrice}}</td>
+    <td>{{stock.currentPrice}}</td>
+    <td>{{stock.purchaseDate}}</td>
+    <td>Sell Date</td>
+    <td>{{stock.quantity}}</td>
+    <td>{{stock.currentPrice*stock.quantity}}</td>
+
+  </tr>
+
+</table>
+

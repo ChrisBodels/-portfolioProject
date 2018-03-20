@@ -6,10 +6,10 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class StockService {
 
-  private _url = 'https://scraper601.herokuapp.com/scrape/test?n=1';
+  // private _url = 'https://scraper601.herokuapp.com/scrape/test?n=1';
 
   // can use this to get data from static file if there is a problem with the above URL
-  // private _url = '/assets/Data/case0.json'
+  private _url = '/assets/Data/data.json'
 
   constructor(private http: HttpClient) { }
 

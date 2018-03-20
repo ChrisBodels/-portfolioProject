@@ -1,5 +1,14 @@
 export interface IStock {
-  n: number;
+  company: string;
+  symbol: string;
+  exchange: string;
+  purchasePrice: number;
+  currentPrice: number;
+  purchaseDate: string;
+  sellDate: string;
+  quantity: number;
+
+  /*n: number;
   currency_rates: object;
   euro: object;
   dollar: number;
@@ -18,7 +27,7 @@ export interface IStock {
   change: string;
   pChg: string;
   ftse350: object;
-  coinranking: object;
+  coinranking: object;*/
 }
 
 
