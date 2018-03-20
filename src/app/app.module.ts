@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
 import { StocksComponent } from './stocks/stocks.component';
+import {StockService} from './stock.service';
 
 
 @NgModule({
@@ -12,9 +14,10 @@ import { StocksComponent } from './stocks/stocks.component';
     StocksComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

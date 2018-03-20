@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Stock, stock} from '../../models/stock';
+// import {Stock, stock} from '../../models/stock';
+import {StockService} from '../stock.service';
 
 @Component({
   selector: 'app-stocks',
@@ -7,14 +8,14 @@ import {Stock, stock} from '../../models/stock';
   styleUrls: ['./stocks.component.css']
 })
 export class StocksComponent implements OnInit {
-  stock: Stock = {
-   // need to add importing of JSON data here.
-    
-  }
 
-  constructor() { }
+  stocks = [];
+
+  constructor(private _stockService: StockService) { }
 
   ngOnInit() {
+    this._stockService.getStocks()
+      .subscribe(data => this.stocks = data);
   }
 
 }
