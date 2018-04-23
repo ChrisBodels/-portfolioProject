@@ -11,6 +11,7 @@ import {StockService} from '../stock.service';
 export class StocksComponent implements OnInit {
 
   stocks = [];
+  cash = 100;
 
   constructor(private _stockService: StockService) { }
 
@@ -18,6 +19,15 @@ export class StocksComponent implements OnInit {
     this._stockService.getStocks()
       .subscribe(data => this.stocks = data);
 
+  }
+
+  sellStock(symbol, purchaseDate) {
+    for (let i = 0; i < this.stocks.length; i++) {
+      if (this.stocks[i].symbol === symbol && this.stocks[i].purchaseDate === purchaseDate && this.stocks[i].quantity !== 0) {
+        this.cash += +((this.stocks[i].totalValue - this.stocks[i].sellCost).toFixed(2));
+        this.stocks[i].quantity = 0;
+      }
+    }
   }
 
   onClick0() {

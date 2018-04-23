@@ -50,5 +50,7 @@
     <td>{{stock.totalValue}}</td>
     <td>{{stock.gainLoss - stock.sellCost}}</td>
     <td>{{stock.sellCost}}</td>
+    <button (click)="sellStock(stock.symbol, stock.purchaseDate)">Sell</button>
   </tr>
 </table>
+<p>Cash: {{ cash }}</p>
