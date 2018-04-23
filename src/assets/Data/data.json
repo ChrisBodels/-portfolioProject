@@ -11,7 +11,8 @@
 		"quantity":1000,
     "change":1,
     "totalValue":5000,
-    "gainLoss":0
+    "gainLoss":0,
+    "sellCost":25
 	},
 	{
 		"company":"BK IRE GRP PLC",
@@ -25,7 +26,8 @@
 		"quantity":1000,
     "change":1,
     "totalValue":4000,
-    "gainLoss":0
+    "gainLoss":0,
+    "sellCost":25
 	},
 	{
 		"company":"BK IRE GRP PLC",
@@ -39,7 +41,8 @@
 		"quantity":2000,
     "change":1,
     "totalValue":8000,
-    "gainLoss":1000
+    "gainLoss":1000,
+    "sellCost":25
 	},
 	{
 		"company":"BK IRE GRP PLC",
@@ -53,7 +56,8 @@
 		"quantity":3000,
     "change":1,
     "totalValue":12000,
-    "gainLoss":3000
+    "gainLoss":3000,
+    "sellCost":25
 	},
 	{
 		"company":"BK IRE GRP PLC",
@@ -67,7 +71,8 @@
 		"quantity":1000,
     "change":1,
     "totalValue":4000,
-    "gainLoss":500
+    "gainLoss":500,
+    "sellCost":25
 	},
 	{
 		"company":"BK IRE GRP PLC",
@@ -81,7 +86,8 @@
 		"quantity":2000,
     "change":1,
     "totalValue":8000,
-    "gainLoss":1000
+    "gainLoss":1000,
+    "sellCost":25
 	},
 	{
 		"company":"BK IRE GRP PLC",
@@ -95,7 +101,8 @@
 		"quantity":3000,
     "change":1,
     "totalValue":12000,
-    "gainLoss":0
+    "gainLoss":0,
+    "sellCost":25
 	},
 	{
 		"company":"BK IRE GRP PLC",
@@ -109,7 +116,8 @@
 		"quantity":4000,
     "change":1,
     "totalValue":16000,
-    "gainLoss":-6000
+    "gainLoss":-6000,
+    "sellCost":25
 	},
 	{
 		"company":"CRH PLC",
@@ -123,7 +131,8 @@
 		"quantity":3000,
     "change":1,
     "totalValue":90000,
-    "gainLoss":30000
+    "gainLoss":30000,
+    "sellCost":25
 	},
 	{
 		"company":"CRH PLC",
@@ -137,7 +146,8 @@
 		"quantity":1000,
     "change":1,
     "totalValue":30000,
-    "gainLoss":5000
+    "gainLoss":5000,
+    "sellCost":25
 	},
 	{
 		"company":"CRH PLC",
@@ -151,7 +161,8 @@
 		"quantity":2000,
     "change":1,
     "totalValue":60000,
-    "gainLoss":0
+    "gainLoss":0,
+    "sellCost":25
 	},
 	{
 		"company":"Tesco",
@@ -165,7 +176,8 @@
 		"quantity":4000,
     "change":1,
     "totalValue":20000,
-    "gainLoss":6000
+    "gainLoss":6000,
+    "sellCost":25
 	},
 	{
 		"company":"Tesco",
@@ -179,7 +191,8 @@
 		"quantity":8000,
     "change":1,
     "totalValue":40000,
-    "gainLoss":16000
+    "gainLoss":16000,
+    "sellCost":25
 	},
 	{
 		"company":"Tesco",
@@ -193,7 +206,8 @@
 		"quantity":2000,
     "change":1,
     "totalValue":10000,
-    "gainLoss":0
+    "gainLoss":0,
+    "sellCost":25
 	},
 	{
 		"company":"Ripple",
@@ -207,7 +221,8 @@
 		"quantity":3000,
     "change":1,
     "totalValue":6000,
-    "gainLoss":0
+    "gainLoss":0,
+    "sellCost":25
 	},
 	{
 		"company":"Ripple",
@@ -218,10 +233,11 @@
     "currentPriceOrig":2.00,
 		"purchaseDate":"01/01/2017",
 		"sellDate":"",
-		"quantity":2500,
+		"quantity":1000,
     "change":1,
     "totalValue":5000,
-    "gainLoss":-1250
+    "gainLoss":-1250,
+    "sellCost":25
 	},
 	{
 		"company":"Ripple",
@@ -235,6 +251,7 @@
 		"quantity":2000,
     "change":1,
     "totalValue":4000,
-    "gainLoss":-1250
+    "gainLoss":-1250,
+    "sellCost":25
 	}
 ]

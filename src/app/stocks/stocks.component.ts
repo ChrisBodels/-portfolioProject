@@ -24,10 +24,16 @@ export class StocksComponent implements OnInit {
     for (let i = 0; i < this.stocks.length; i++) {
       this.stocks[i].change = 1;
       this.stocks[i].currentPrice = +((this.stocks[i].currentPriceOrig * this.stocks[i].change).toFixed(2));
-      // this.stocks[i].currentPrice = this.stocks[i].currentPriceOrig * this.stocks[i].change;
-      // this.stocks[i].currentPrice = Math.round((this.stocks[i].currentPrice * 100) / 100);
-      // this.stocks[i].totalValue = Math.round(((this.stocks[i].currentPrice * this.stocks[i].quantity) * 100) / 100);
       this.stocks[i].totalValue = +((this.stocks[i].currentPrice * this.stocks[i].quantity).toFixed(2));
+      if (this.stocks[i].totalValue > 25000) {
+        const balance = this.stocks[i].totalValue - 25000;
+        this.stocks[i].sellCost = +(251.25 + (balance / 200)).toFixed(2);
+      } else {
+        this.stocks[i].sellCost = +(((this.stocks[i].totalValue / 100) + 1.25).toFixed(2));
+      }
+      if (this.stocks[i].sellCost < 26.25) {
+        this.stocks[i].sellCost = 26.25;
+      }
       this.stocks[i].gainLoss = +((this.stocks[i].totalValue - this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2));
     }
   }
@@ -37,6 +43,15 @@ export class StocksComponent implements OnInit {
       this.stocks[i].change = 1.1;
       this.stocks[i].currentPrice = +((this.stocks[i].currentPriceOrig * this.stocks[i].change).toFixed(2));
       this.stocks[i].totalValue = +((this.stocks[i].currentPrice * this.stocks[i].quantity).toFixed(2));
+      if (this.stocks[i].totalValue > 25000) {
+        const balance = this.stocks[i].totalValue - 25000;
+        this.stocks[i].sellCost = +(251.25 + (balance / 200)).toFixed(2);
+      } else {
+        this.stocks[i].sellCost = +(((this.stocks[i].totalValue / 100) + 1.25).toFixed(2));
+      }
+      if (this.stocks[i].sellCost < 26.25) {
+        this.stocks[i].sellCost = 26.25;
+      }
       this.stocks[i].gainLoss = +((this.stocks[i].totalValue - this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2));
     }
   }
@@ -46,6 +61,15 @@ export class StocksComponent implements OnInit {
       this.stocks[i].change = 0.9;
       this.stocks[i].currentPrice = +((this.stocks[i].currentPriceOrig * this.stocks[i].change).toFixed(2));
       this.stocks[i].totalValue = +((this.stocks[i].currentPrice * this.stocks[i].quantity).toFixed(2));
+      if (this.stocks[i].totalValue > 25000) {
+        const balance = this.stocks[i].totalValue - 25000;
+        this.stocks[i].sellCost = +(251.25 + (balance / 200)).toFixed(2);
+      } else {
+        this.stocks[i].sellCost = +(((this.stocks[i].totalValue / 100) + 1.25).toFixed(2));
+      }
+      if (this.stocks[i].sellCost < 26.25) {
+        this.stocks[i].sellCost = 26.25;
+      }
       this.stocks[i].gainLoss = +((this.stocks[i].totalValue - this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2));
     }
   }
@@ -55,6 +79,15 @@ export class StocksComponent implements OnInit {
       this.stocks[i].change = 1.2;
       this.stocks[i].currentPrice = +((this.stocks[i].currentPriceOrig * this.stocks[i].change).toFixed(2));
       this.stocks[i].totalValue = +((this.stocks[i].currentPrice * this.stocks[i].quantity).toFixed(2));
+      if (this.stocks[i].totalValue > 25000) {
+        const balance = this.stocks[i].totalValue - 25000;
+        this.stocks[i].sellCost = +(251.25 + (balance / 200)).toFixed(2);
+      } else {
+        this.stocks[i].sellCost = +(((this.stocks[i].totalValue / 100) + 1.25).toFixed(2));
+      }
+      if (this.stocks[i].sellCost < 26.25) {
+        this.stocks[i].sellCost = 26.25;
+      }
       this.stocks[i].gainLoss = +((this.stocks[i].totalValue - this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2));
     }
   }
@@ -64,6 +97,15 @@ export class StocksComponent implements OnInit {
       this.stocks[i].change = 0.8;
       this.stocks[i].currentPrice = +((this.stocks[i].currentPriceOrig * this.stocks[i].change).toFixed(2));
       this.stocks[i].totalValue = +((this.stocks[i].currentPrice * this.stocks[i].quantity).toFixed(2));
+      if (this.stocks[i].totalValue > 25000) {
+        const balance = this.stocks[i].totalValue - 25000;
+        this.stocks[i].sellCost = +(251.25 + (balance / 200)).toFixed(2);
+      } else {
+        this.stocks[i].sellCost = +(((this.stocks[i].totalValue / 100) + 1.25).toFixed(2));
+      }
+      if (this.stocks[i].sellCost < 26.25) {
+        this.stocks[i].sellCost = 26.25;
+      }
       this.stocks[i].gainLoss = +((this.stocks[i].totalValue - this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2));
     }
   }
@@ -73,6 +115,15 @@ export class StocksComponent implements OnInit {
       this.stocks[i].change = 2.0;
       this.stocks[i].currentPrice = +((this.stocks[i].currentPriceOrig * this.stocks[i].change).toFixed(2));
       this.stocks[i].totalValue = +((this.stocks[i].currentPrice * this.stocks[i].quantity).toFixed(2));
+      if (this.stocks[i].totalValue > 25000) {
+        const balance = this.stocks[i].totalValue - 25000;
+        this.stocks[i].sellCost = +(251.25 + (balance / 200)).toFixed(2);
+      } else {
+        this.stocks[i].sellCost = +(((this.stocks[i].totalValue / 100) + 1.25).toFixed(2));
+      }
+      if (this.stocks[i].sellCost < 26.25) {
+        this.stocks[i].sellCost = 26.25;
+      }
       this.stocks[i].gainLoss = +((this.stocks[i].totalValue - this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2));
     }
   }

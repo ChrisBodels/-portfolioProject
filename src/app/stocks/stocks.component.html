@@ -36,6 +36,7 @@
   <th>Quantity</th>
   <th>Total Value</th>
   <th>Current Gain/Loss</th>
+  <th>Sell Costs</th>
   <tr *ngFor="let stock of stocks">
     <td>{{stock.company}}</td>
     <td>{{stock.symbol}}</td>
@@ -47,6 +48,7 @@
     <td>N/A</td>
     <td>{{stock.quantity}}</td>
     <td>{{stock.totalValue}}</td>
-    <td>{{stock.gainLoss}}</td>
+    <td>{{stock.gainLoss - stock.sellCost}}</td>
+    <td>{{stock.sellCost}}</td>
   </tr>
 </table>
