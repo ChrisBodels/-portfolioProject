@@ -1,26 +1,52 @@
 
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Views
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a (click)=onClick0()>Case 0</a>
+      <a (click)=onClick1()>Case 1</a>
+      <a (click)=onClick2()>Case 2</a>
+      <a (click)=onClick3()>Case 3</a>
+      <a (click)=onClick4()>Case 4</a>
+      <a (click)=onClick5()>Case 5</a>
+      <a>Live Data</a>
+    </div>
+    <button class="dropbtn" *ngIf="stocks[0].change === 1">Case 0</button>
+    <button class="dropbtn" *ngIf="stocks[0].change === 1.1">Case 1</button>
+    <button class="dropbtn" *ngIf="stocks[0].change === 0.9">Case 2</button>
+    <button class="dropbtn" *ngIf="stocks[0].change === 1.2">Case 3</button>
+    <button class="dropbtn" *ngIf="stocks[0].change === 0.8">Case 4</button>
+    <button class="dropbtn" *ngIf="stocks[0].change === 2">Case 5</button>
+  </div>
+</div>
+
+<p></p>
+
 <table cellpadding="2" cellspacing="7" style="width:100%">
   <th>Company</th>
   <th>Symbol</th>
   <th>Exchange</th>
   <th>Purchase Price</th>
   <th>Current Price</th>
+  <th>Change</th>
   <th>Purchase Date</th>
   <th>Sell Date</th>
   <th>Quantity</th>
   <th>Total Value</th>
+  <th>Current Gain/Loss</th>
   <tr *ngFor="let stock of stocks">
     <td>{{stock.company}}</td>
     <td>{{stock.symbol}}</td>
     <td>{{stock.exchange}}</td>
     <td>{{stock.purchasePrice}}</td>
     <td>{{stock.currentPrice}}</td>
+    <td>{{stock.change}}</td>
     <td>{{stock.purchaseDate}}</td>
-    <td>Sell Date</td>
+    <td>N/A</td>
     <td>{{stock.quantity}}</td>
-    <td>{{stock.currentPrice*stock.quantity}}</td>
-
+    <td>{{stock.totalValue}}</td>
+    <td>{{stock.gainLoss}}</td>
   </tr>
-
 </table>
-
