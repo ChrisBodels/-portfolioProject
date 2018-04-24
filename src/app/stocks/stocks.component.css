@@ -2,16 +2,12 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-/*
+
 .navbar {
-  overflow: hidden;
   background-color: #333;
   font-family: Arial;
 }
 
-/* Links inside the navbar */
-
-/*
 .navbar a {
   float: left;
   font-size: 16px;
@@ -23,7 +19,6 @@ table, th, td {
 
 .dropdown {
   float: left;
-  overflow: hidden;
 }
 
 .dropdown .dropbtn {
@@ -67,4 +62,4 @@ table, th, td {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}*/
+}
