@@ -19,7 +19,6 @@ export class StocksComponent implements OnInit {
   ngOnInit() {
     this._stockService.getStocks()
       .subscribe(data => this.stocks = data);
-
   }
 
   sellStock(symbol, purchaseDate) {
@@ -27,25 +26,26 @@ export class StocksComponent implements OnInit {
       if (this.stocks[i].symbol === symbol && this.stocks[i].purchaseDate === purchaseDate && this.stocks[i].quantity !== 0) {
         this.cash += +((this.stocks[i].totalValue - this.stocks[i].sellCost).toFixed(2));
         this.stocks[i].quantity = 0;
+        this.stocks[i].sellDate = this.getDate();
       }
     }
   }
 
-  /*getDate() {
-    let today = new Date();
-    let dd = today.getDate();
+  getDate() {
+    const today = new Date();
+    const dd = today.getDate();
     const mm = today.getMonth() + 1; // January is 0!
 
     const yyyy = today.getFullYear();
     if (dd < 10) {
-      dd = '0' + dd;
+       const ddStr = '0' + dd;
     }
     if ( mm < 10 ) {
-      mm = '0' + mm;
+      const mmStr = '0' + mm;
     }
-    today = dd + '/' + mm + '/' + yyyy;
-    return today;
-  }*/
+     const todayStr = dd + '/' + mm + '/' + yyyy;
+    return todayStr;
+  }
 
   buyStock(symbol, amount) {
     const stocksLength = this.stocks.length;
@@ -60,7 +60,7 @@ export class StocksComponent implements OnInit {
           'purchasePrice': this.stocks[loopControl].currentPrice,
           'currentPrice': this.stocks[loopControl].currentPrice,
           'currentPriceOrig': this.stocks[loopControl].currentPrice,
-          'purchaseDate': 'Placeholder',
+          'purchaseDate': this.getDate(),
           'sellDate': 'N/A',
           'quantity': amount,
           'change': this.stocks[loopControl].change,
@@ -75,6 +75,19 @@ export class StocksComponent implements OnInit {
         breakLoop = true;
       }
       loopControl += 1;
+    }
+    if (this.stocks[0].change === 1){
+      this.onClick0();
+    } else if (this.stocks[0].change === 1.1) {
+      this.onClick1();
+    } else if (this.stocks[0].change === 0.9) {
+      this.onClick2();
+    } else if (this.stocks[0].change === 1.2) {
+      this.onClick3();
+    } else if (this.stocks[0].change === 0.8) {
+      this.onClick4();
+    } else if (this.stocks[0].change === 2.0) {
+      this.onClick5();
     }
   }
 

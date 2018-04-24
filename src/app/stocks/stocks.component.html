@@ -57,12 +57,12 @@
     <td>{{stock.currentPrice}}</td>
     <td>{{stock.change}}</td>
     <td>{{stock.purchaseDate}}</td>
-    <td>N/A</td>
+    <td>{{stock.sellDate}}</td>
     <td>{{stock.quantity}}</td>
     <td>{{stock.totalValue}}</td>
     <td>{{stock.gainLoss - stock.sellCost}}</td>
     <td>{{stock.sellCost}}</td>
-    <td><button (click)="sellStock(stock.symbol, stock.purchaseDate)">Sell</button></td>
+    <td><button (click)="sellStock(stock.symbol, stock.purchaseDate)">Sell Line</button></td>
   </tr>
 </table>
 <p>Cash: {{ cash }}</p>
@@ -104,3 +104,5 @@
       </div>
     </div>
   </div>
+
+<script>onClick0()</script>
