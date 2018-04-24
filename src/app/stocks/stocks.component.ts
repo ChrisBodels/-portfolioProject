@@ -1,5 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-// import {Stock, stock} from '../../models/stock';
+import { Component, OnInit} from '@angular/core';
 import {StockService} from '../stock.service';
 
 
@@ -19,6 +18,38 @@ export class StocksComponent implements OnInit {
   ngOnInit() {
     this._stockService.getStocks()
       .subscribe(data => this.stocks = data);
+  }
+
+  grossPresentValue() {
+    let gpv = this.cash;
+    for (let i = 0; i < this.stocks.length; i++) {
+      gpv += this.stocks[i].totalValue;
+    }
+    return gpv;
+  }
+
+  totalSellCosts() {
+    let tsc = 0;
+    for (let i = 0; i < this.stocks.length; i++) {
+      tsc += this.stocks[i].sellCost;
+    }
+    return tsc;
+  }
+
+  purchasePriceTotal() {
+    let ppt = this.cash;
+    for (let i = 0; i < this.stocks.length; i++) {
+      ppt += +(this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2);
+    }
+    return ppt;
+  }
+
+  grossPresentValueSellCosts(){
+    let gpvsc = this.cash;
+    for (let i = 0; i < this.stocks.length; i++) {
+      gpvsc += +(this.stocks[i].totalValue - this.stocks[i].sellCost).toFixed(2);
+    }
+    return gpvsc;
   }
 
   sellStock(symbol, purchaseDate) {
@@ -61,7 +92,7 @@ export class StocksComponent implements OnInit {
           'currentPrice': this.stocks[loopControl].currentPrice,
           'currentPriceOrig': this.stocks[loopControl].currentPrice,
           'purchaseDate': this.getDate(),
-          'sellDate': 'N/A',
+          'sellDate': '',
           'quantity': amount,
           'change': this.stocks[loopControl].change,
           'totalValue': +((this.stocks[loopControl].currentPrice * amount).toFixed(2)),
@@ -76,7 +107,7 @@ export class StocksComponent implements OnInit {
       }
       loopControl += 1;
     }
-    if (this.stocks[0].change === 1){
+    if (this.stocks[0].change === 1) {
       this.onClick0();
     } else if (this.stocks[0].change === 1.1) {
       this.onClick1();
