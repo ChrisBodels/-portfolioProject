@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 // import {Stock, stock} from '../../models/stock';
 import {StockService} from '../stock.service';
+
 
 
 @Component({
@@ -27,6 +28,53 @@ export class StocksComponent implements OnInit {
         this.cash += +((this.stocks[i].totalValue - this.stocks[i].sellCost).toFixed(2));
         this.stocks[i].quantity = 0;
       }
+    }
+  }
+
+  /*getDate() {
+    let today = new Date();
+    let dd = today.getDate();
+    const mm = today.getMonth() + 1; // January is 0!
+
+    const yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if ( mm < 10 ) {
+      mm = '0' + mm;
+    }
+    today = dd + '/' + mm + '/' + yyyy;
+    return today;
+  }*/
+
+  buyStock(symbol, amount) {
+    const stocksLength = this.stocks.length;
+    let breakLoop = false;
+    let loopControl = 0;
+    while (breakLoop === false && loopControl < stocksLength) {
+      if (this.stocks[loopControl].symbol === symbol) {
+        const newStock = {
+          'company': this.stocks[loopControl].company,
+          'symbol': symbol,
+          'exchange': this.stocks[loopControl].exchange,
+          'purchasePrice': this.stocks[loopControl].currentPrice,
+          'currentPrice': this.stocks[loopControl].currentPrice,
+          'currentPriceOrig': this.stocks[loopControl].currentPrice,
+          'purchaseDate': 'Placeholder',
+          'sellDate': 'N/A',
+          'quantity': amount,
+          'change': this.stocks[loopControl].change,
+          'totalValue': +((this.stocks[loopControl].currentPrice * amount).toFixed(2)),
+          'gainLoss': 0,
+          'sellCost': 0
+        };
+        if (newStock.totalValue <= this.cash) {
+          this.stocks.push(newStock);
+          this.cash += -(newStock.totalValue);
+        }
+        breakLoop = true;
+      }
+      loopControl += 1;
     }
   }
 

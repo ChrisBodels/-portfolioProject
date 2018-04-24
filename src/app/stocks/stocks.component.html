@@ -21,8 +21,20 @@
     <button class="dropbtn" *ngIf="stocks[0].change === 2">Case 5</button>
   </div>
 </div>
-
+<!--
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+-->
 <p></p>
+<button data-target="#fu" data-toggle="modal">Buy</button>
 
 <table cellpadding="2" cellspacing="7" style="width:100%">
   <th>Company</th>
@@ -50,7 +62,45 @@
     <td>{{stock.totalValue}}</td>
     <td>{{stock.gainLoss - stock.sellCost}}</td>
     <td>{{stock.sellCost}}</td>
-    <button (click)="sellStock(stock.symbol, stock.purchaseDate)">Sell</button>
+    <td><button (click)="sellStock(stock.symbol, stock.purchaseDate)">Sell</button></td>
   </tr>
 </table>
 <p>Cash: {{ cash }}</p>
+
+<!--
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+-->
+
+
+  <div class="modal fade" id="fu" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Buy Stocks</h4>
+            <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+               <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <form id="buy">
+            <input value="Symbol" #symbol>
+            <input value="quantity" #quantity>
+            <input type="button" name="submit" value="Submit" (click)="buyStock(symbol.value, quantity.value)">
+          </form>
+        </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark"  data-dismiss="modal">Close</button>
+  </div>
+      </div>
+    </div>
+  </div>
