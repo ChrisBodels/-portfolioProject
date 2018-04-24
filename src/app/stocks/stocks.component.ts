@@ -23,7 +23,9 @@ export class StocksComponent implements OnInit {
   grossPresentValue() {
     let gpv = this.cash;
     for (let i = 0; i < this.stocks.length; i++) {
-      gpv += this.stocks[i].totalValue;
+      if (this.stocks[i].quantity > 0) {
+        gpv += this.stocks[i].totalValue;
+      }
     }
     return gpv;
   }
@@ -31,7 +33,9 @@ export class StocksComponent implements OnInit {
   totalSellCosts() {
     let tsc = 0;
     for (let i = 0; i < this.stocks.length; i++) {
-      tsc += this.stocks[i].sellCost;
+      if (this.stocks[i].quantity > 0) {
+        tsc += this.stocks[i].sellCost;
+      }
     }
     return tsc;
   }
@@ -39,7 +43,9 @@ export class StocksComponent implements OnInit {
   purchasePriceTotal() {
     let ppt = this.cash;
     for (let i = 0; i < this.stocks.length; i++) {
-      ppt += +(this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2);
+      if (this.stocks[i].quantity > 0) {
+        ppt += +(this.stocks[i].purchasePrice * this.stocks[i].quantity).toFixed(2);
+      }
     }
     return ppt;
   }
@@ -47,7 +53,9 @@ export class StocksComponent implements OnInit {
   grossPresentValueSellCosts(){
     let gpvsc = this.cash;
     for (let i = 0; i < this.stocks.length; i++) {
-      gpvsc += +(this.stocks[i].totalValue - this.stocks[i].sellCost).toFixed(2);
+      if (this.stocks[i].quantity > 0) {
+        gpvsc += +(this.stocks[i].totalValue - this.stocks[i].sellCost).toFixed(2);
+      }
     }
     return gpvsc;
   }
@@ -68,13 +76,8 @@ export class StocksComponent implements OnInit {
     const mm = today.getMonth() + 1; // January is 0!
 
     const yyyy = today.getFullYear();
-    if (dd < 10) {
-       const ddStr = '0' + dd;
-    }
-    if ( mm < 10 ) {
-      const mmStr = '0' + mm;
-    }
-     const todayStr = dd + '/' + mm + '/' + yyyy;
+
+    const todayStr = dd + '/' + mm + '/' + yyyy;
     return todayStr;
   }
 
